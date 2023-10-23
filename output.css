@@ -1,0 +1,41 @@
+@font-face {
+  font-family: PocketMonk;
+  src: url(/Users/oliveroquist/Documents/pokedex/Font/PocketMonk.otf) format("opentype");
+}
+* {
+  color: white;
+  font-family: "PocketMonk", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(62, 58, 58);
+}
+
+#pokedex {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 10px;
+  margin: auto;
+}
+
+.pokemon-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  background-color: rgb(62, 58, 58);
+  list-style-type: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+/*# sourceMappingURL=output.css.map */
