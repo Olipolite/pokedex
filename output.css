@@ -13,6 +13,16 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(62, 58, 58);
+  position: relative;
+}
+.container #shiny-button {
+  border-color: #ffde00;
+  background-color: #3B4CCA;
+  color: #ffde00;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px 10px 20px;
 }
 
 #pokedex {
@@ -23,6 +33,20 @@
   grid-row-gap: 0px;
   padding: 10px;
   margin: auto;
+}
+@media screen and (max-width: 1000px) {
+  #pokedex {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 700px) {
+  #pokedex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
 
 .pokemon-card {
@@ -36,6 +60,12 @@
   list-style-type: none;
   padding: 10px;
   margin: 10px;
+}
+
+#pokemon-logo {
+  height: auto;
+  width: 300px;
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=output.css.map */
