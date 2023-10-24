@@ -6,14 +6,11 @@
 * {
     color: white;
     font-family: 'PocketMonk', sans-serif;
-    // background-color: rgb(62, 58, 58);
 }
 
 body {
     background: rgb(33,33,40);
     background: linear-gradient(90deg, rgba(33,33,40,1) 5%, rgba(121,12,9,1) 47%, rgba(255,229,0,1) 100%);
-    // background: rgb(2,0,36);
-    // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 .container {
@@ -120,5 +117,22 @@ body {
             color: #3B4CCA;
             cursor: pointer;
         }
+    }
+}
+
+#search-pokemon {
+    color: #464646;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: fantasy;
+
+    &:input {
+        color: #464646;
+        background-color: #ffde00;
+    }
+    &:focus {
+        outline: none;
     }
 }

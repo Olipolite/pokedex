@@ -14,7 +14,7 @@ const fetchPokemon = () => {
             weight: result.weight,
             order: result.order,
         }));
-        displayPokemon(pokemon);
+        renderPokemon(pokemon);
         console.log(pokemon)
     });
 };
@@ -41,7 +41,7 @@ const fetchShinyPokemon = () => {
 fetchPokemon();
 
 
-const displayPokemon = (pokemon) => {
+const renderPokemon = (pokemon) => {
     const pokemonHTMLString = pokemon
         .map((pokeman) => `
             <li class="pokemon-card">

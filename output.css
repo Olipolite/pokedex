@@ -114,4 +114,20 @@ body {
   cursor: pointer;
 }
 
+#search-pokemon {
+  color: #464646;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: fantasy;
+}
+#search-pokemon:input {
+  color: #464646;
+  background-color: #ffde00;
+}
+#search-pokemon:focus {
+  outline: none;
+}
+
 /*# sourceMappingURL=output.css.map */
