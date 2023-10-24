@@ -10,9 +10,14 @@
   <body>
     <div class="container">
       <img id="pokemon-logo" src="pokemonlogo.png"></img>
-      <h2>Kanto Region</h2>
+      <div id="regions-container">
+        <h2>Kanto Region</h2>
+        <h2>Johto Region</h2>
+      </div>
+      <input id="search-pokemon" type="text" placeholder="Search..." onkeyup="searchPokemon()"></input>
       <ul id="pokedex"></ul>
     </div>
-	<script src="script.js"></script>
+    <script src="script.js"></script>
+    <script src="searchPokemon.js"></script>
   </body>
 </html>
