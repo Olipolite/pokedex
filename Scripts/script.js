@@ -7,6 +7,7 @@ const fetchPokemon = () => {
     Promise.all(promises).then((results) => {
         const pokemon = results.map((result) => ({
             name: result.name,
+            back: result.sprites['back_default'],
             image: result.sprites['front_default'],
             type: result.types.map((type) => type.type.name).join(', '),
             id: result.id,
@@ -15,6 +16,7 @@ const fetchPokemon = () => {
             order: result.order,
         }));
         renderPokemon(pokemon);
+        renderKantoPokemon(pokemon);
         console.log(pokemon)
     });
 };
@@ -58,6 +60,21 @@ const renderPokemon = (pokemon) => {
 
 
 
+$("#regions-container h2:first").attr("id", "kanto-region");
+
+const renderKantoPokemon = (pokemon) => {
+    $("#kanto-region").on("click", () => {
+        const $cardImage = $(".card-image");
+        pokemon.map((pokeman, index) => {
+            $cardImage.eq(index).attr("src", pokeman.image)
+            $(".card-title").eq(index).text(pokeman.name)
+        })
+        $(".pokemon-card:gt(99)").css("display", "flex");
+    })
+}
+
+
+
 const shinyButton = document.createElement("button");
 shinyButton.textContent = "Shiny!"
 const containerClass = document.querySelector(".container");
@@ -72,3 +89,10 @@ const shinyToggle = () => {
 };
 const buttonId = document.getElementById("shiny-button");
 buttonId.addEventListener("click", shinyToggle);
+
+
+const backPokemon = () => {
+    console.log("Hej hur mar du?")
+}
+
+let $testStuff = $()

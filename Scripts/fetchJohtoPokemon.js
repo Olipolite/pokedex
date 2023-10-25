@@ -5,7 +5,7 @@ const fetchJohtoPokemon = () => {
         promises.push(fetch(url).then((res) => res.json()));
     }
     Promise.all(promises).then((results) => {
-        const pokemonJohto = results.map((result) => ({
+        let pokemonJohto = results.map((result) => ({
             name: result.name,
             image: result.sprites['front_default'],
             type: result.types.map((type) => type.type.name).join(', '),
@@ -15,7 +15,20 @@ const fetchJohtoPokemon = () => {
             order: result.order,
         }));
         console.log(pokemonJohto)
+        renderJohtoPokemon(pokemonJohto);
     });
 }
 
-fetchJohtoPokemon();
+$("#regions-container h2:last").attr("id", "johto-region");
+
+const renderJohtoPokemon = (pokemonJohto) => {
+    $("#johto-region").on("click", () => {
+        pokemonJohto.map((pokemanJohto, index) => {
+            $(".card-image").eq(index).attr("src", pokemanJohto.image);
+            $(".card-title").eq(index).text(pokemanJohto.name)
+        })
+        $(".pokemon-card:gt(99)").css("display", "none");
+    })
+}
+
+fetchJohtoPokemon()
