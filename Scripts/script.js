@@ -56,6 +56,9 @@ const renderPokemon = (pokemon) => {
         )
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
+    $("li").each(function(i) {
+        $(this).attr("id", + i)
+    })
 };
 
 
@@ -64,15 +67,15 @@ $("#regions-container h2:first").attr("id", "kanto-region");
 
 const renderKantoPokemon = (pokemon) => {
     $("#kanto-region").on("click", () => {
-        const $cardImage = $(".card-image");
         pokemon.map((pokeman, index) => {
-            $cardImage.eq(index).attr("src", pokeman.image)
-            $(".card-title").eq(index).text(pokeman.name)
+            $(".card-image").eq(index).attr("src", pokeman.image);
+            $(".card-title").eq(index).text(pokeman.name);
+            $(".card-subtitle").eq(index).text(`Type: ${pokeman.type}`);
+            $(".card-tooltip").eq(index).text(`Height: ${pokeman.height / 10}m Weight: ${pokeman.weight / 10}kg Pokédex #${pokeman.id}`)
         })
         $(".pokemon-card:gt(99)").css("display", "flex");
     })
-}
-
+};
 
 
 const shinyButton = document.createElement("button");
@@ -89,10 +92,3 @@ const shinyToggle = () => {
 };
 const buttonId = document.getElementById("shiny-button");
 buttonId.addEventListener("click", shinyToggle);
-
-
-const backPokemon = () => {
-    console.log("Hej hur mar du?")
-}
-
-let $testStuff = $()
