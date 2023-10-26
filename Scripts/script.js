@@ -7,8 +7,8 @@ const fetchPokemon = () => {
     Promise.all(promises).then((results) => {
         const pokemon = results.map((result) => ({
             name: result.name,
-            back: result.sprites['back_default'],
-            image: result.sprites['front_default'],
+            image: result.sprites["front_default"],
+            back: result.sprites["back_default"],
             type: result.types.map((type) => type.type.name).join(', '),
             id: result.id,
             height: result.height,
@@ -17,30 +17,9 @@ const fetchPokemon = () => {
         }));
         renderPokemon(pokemon);
         renderKantoPokemon(pokemon);
-        console.log(pokemon)
+        console.log(pokemon);
     });
 };
-
-const fetchShinyPokemon = () => {
-    const promises = [];
-    for (let i = 1; i <= 150; i++) {
-        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        promises.push(fetch(url).then((res) => res.json()));
-    }
-    Promise.all(promises).then((results) => {
-        const pokemonShiny = results.map((result) => ({
-            image: result.sprites['front_shiny'],
-        }));
-        const cardImage = document.querySelectorAll(".card-image");
-        cardImage.forEach((img, index) => {
-            img.src = pokemonShiny[index].image;
-        })
-        console.log(pokemonShiny,"shiny");
-    });
-};
-
-
-fetchPokemon();
 
 
 const renderPokemon = (pokemon) => {
@@ -56,7 +35,7 @@ const renderPokemon = (pokemon) => {
         )
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
-    $("li").each(function(i) {
+    $("ul li img").each(function(i) {
         $(this).attr("id", + i)
     })
 };
@@ -77,18 +56,17 @@ const renderKantoPokemon = (pokemon) => {
     })
 };
 
+const pokemonBack = (pokemon) => {
+    $("ul li img").on("click", function(e) {
+        let id = this.id;
+        console.log(id);
+        let imageBack = pokemon[id].back;
+        if($("#" + id).attr("src") == imageBack) {
+            $("#" + id).attr("src", pokemon[id].image);
+        } else {
+            $("#" + id).attr("src", pokemon[id].back);
+        };
+    });
+};   
 
-const shinyButton = document.createElement("button");
-shinyButton.textContent = "Shiny!"
-const containerClass = document.querySelector(".container");
-containerClass.prepend(shinyButton);
-
-// Set ID for button -
-const setShinyButtonId = document.querySelector(".container").firstChild;
-setShinyButtonId.setAttribute("id", "shiny-button");
-
-const shinyToggle = () => { 
-    fetchShinyPokemon();
-};
-const buttonId = document.getElementById("shiny-button");
-buttonId.addEventListener("click", shinyToggle);
+fetchPokemon();

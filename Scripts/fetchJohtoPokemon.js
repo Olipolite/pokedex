@@ -36,16 +36,16 @@ const renderJohtoPokemon = (pokemonJohto) => {
 };
 
 const pokemonJohtoBack = (pokemonJohto) => {
-    $("ul li").on("click", function(e) {
-        let id = this.id;
-        console.log(id);
-        $("#" + id).attr("src", pokemonJohto[2].back);
-    });
-};
-// const pokemonJohtoBack = () => {
-//     $('ul li').on('click', function(e) {
-//         ($(this).index()); 
-//     });
-// }
+        $("ul li img").on("click", function() {
+            let id = this.id;
+            console.log(id);
+            let imageBack = pokemonJohto[id].back
+            if($("#" + id).attr("src") == imageBack) {
+                $("#" + id).attr("src", pokemonJohto[id].image);
+            } else {
+                $("#" + id).attr("src", pokemonJohto[id].back);
+            };
+        });
+    };
 
 fetchJohtoPokemon()
