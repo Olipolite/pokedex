@@ -1,3 +1,6 @@
+var kantoRegion = true;
+var shinyPokemonKanto = true;
+
 const fetchPokemon = () => {
     const promises = [];
     for (let i = 1; i <= 151; i++) {
@@ -17,7 +20,7 @@ const fetchPokemon = () => {
         }));
         renderPokemon(pokemon);
         renderKantoPokemon(pokemon);
-        console.log(pokemon);
+        pokemonBack(pokemon)
     });
 };
 
@@ -51,22 +54,26 @@ const renderKantoPokemon = (pokemon) => {
             $(".card-title").eq(index).text(pokeman.name);
             $(".card-subtitle").eq(index).text(`Type: ${pokeman.type}`);
             $(".card-tooltip").eq(index).text(`Height: ${pokeman.height / 10}m Weight: ${pokeman.weight / 10}kg Pokédex #${pokeman.id}`)
-        })
+        });
         $(".pokemon-card:gt(99)").css("display", "flex");
-    })
+        kantoRegion = true;
+    });
 };
 
 const pokemonBack = (pokemon) => {
-    $("ul li img").on("click", function(e) {
-        let id = this.id;
-        console.log(id);
-        let imageBack = pokemon[id].back;
-        if($("#" + id).attr("src") == imageBack) {
-            $("#" + id).attr("src", pokemon[id].image);
+    $("li img").on("click", function() {
+        if(kantoRegion) {
+            const id = this.id;
+            const imageBack = pokemon[id].back;
+            if($("#" + id).attr("src") === imageBack) {
+                $("#" + id).attr("src", pokemon[id].image);
+            } else {
+                $("#" + id).attr("src", pokemon[id].back);
+            };
         } else {
-            $("#" + id).attr("src", pokemon[id].back);
+            return;
         };
     });
-};   
+};
 
 fetchPokemon();

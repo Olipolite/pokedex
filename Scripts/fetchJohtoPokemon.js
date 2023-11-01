@@ -30,22 +30,26 @@ const renderJohtoPokemon = (pokemonJohto) => {
             $(".card-title").eq(index).text(pokemanJohto.name);
             $(".card-subtitle").eq(index).text(`Type: ${pokemanJohto.type}`);
             $(".card-tooltip").eq(index).text(`Height: ${pokemanJohto.height / 10}m Weight: ${pokemanJohto.weight / 10}kg Pokédex #${pokemanJohto.id}`);
-        })
+        });
         $(".pokemon-card:gt(99)").css("display", "none");
-    })
+        kantoRegion = false;
+    });
 };
 
 const pokemonJohtoBack = (pokemonJohto) => {
-        $("ul li img").on("click", function() {
-            let id = this.id;
-            console.log(id);
-            let imageBack = pokemonJohto[id].back
-            if($("#" + id).attr("src") == imageBack) {
+    $("li img").on("click", function() {
+        if(!kantoRegion){
+            const id = this.id;
+            const imageJohtoBack = pokemonJohto[id].back
+            if($("#" + id).attr("src") === imageJohtoBack) {
                 $("#" + id).attr("src", pokemonJohto[id].image);
             } else {
                 $("#" + id).attr("src", pokemonJohto[id].back);
             };
-        });
-    };
+        } else {
+            return;
+        };
+    });
+};
 
 fetchJohtoPokemon()

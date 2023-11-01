@@ -78,7 +78,6 @@ html {
   margin: 10px;
   -webkit-transition: transform 0.3s ease-in-out;
   position: relative;
-  cursor: pointer;
 }
 .pokemon-card:hover {
   transform: scale(1.1);
@@ -103,6 +102,7 @@ html {
 .card-image {
   height: 125px;
   width: auto;
+  cursor: pointer;
 }
 
 #pokemon-logo {
