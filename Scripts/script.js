@@ -1,5 +1,4 @@
 var kantoRegion = true;
-var shinyPokemonKanto = true;
 
 const fetchPokemon = () => {
     const promises = [];
@@ -75,5 +74,9 @@ const pokemonBack = (pokemon) => {
         };
     });
 };
+
+$("#pokemon-logo").on("click", function() {
+    window.location.reload(true);
+})
 
 fetchPokemon();

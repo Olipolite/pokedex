@@ -15,11 +15,10 @@ const fetchJohtoPokemon = () => {
             weight: result.weight,
             order: result.order,
         }));
-        console.log(pokemonJohto)
         renderJohtoPokemon(pokemonJohto);
         pokemonJohtoBack(pokemonJohto);
     });
-}
+};
 
 $("#regions-container h2:last").attr("id", "johto-region");
 

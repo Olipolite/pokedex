@@ -9,7 +9,7 @@
 
 body {
   background: rgb(33, 33, 40);
-  background: linear-gradient(90deg, rgb(33, 33, 40) 5%, rgb(121, 12, 9) 47%, rgb(255, 229, 0) 100%);
+  background: linear-gradient(90deg, rgb(61, 55, 55) 5%, rgb(121, 12, 9) 47%, rgb(255, 229, 0) 100%);
 }
 
 html {
@@ -22,6 +22,7 @@ html {
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 .container #shiny-button {
   font-size: large;
@@ -32,6 +33,15 @@ html {
   top: 10px;
   right: 10px;
   padding: 10px 30px 10px 30px;
+}
+@media screen and (max-width: 700px) {
+  .container #shiny-button {
+    display: flex;
+    position: unset;
+    margin-bottom: 10px;
+    font-size: medium;
+    padding: 5px 30px 5px 30px;
+  }
 }
 .container #scroll-top-button {
   font-size: large;
@@ -102,6 +112,9 @@ html {
 .card-image {
   height: 125px;
   width: auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -109,10 +122,11 @@ html {
   height: auto;
   width: 300px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 #regions-container {
-  width: 45%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -120,10 +134,7 @@ html {
 }
 @media screen and (max-width: 700px) {
   #regions-container {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    padding: 10px 0px 10px 0px;
   }
 }
 #regions-container h2:hover {
