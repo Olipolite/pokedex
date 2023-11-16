@@ -1,3 +1,7 @@
+html {
+    font-size: 16px;
+}
+
 @font-face {
     font-family: PocketMonk;
     src: url(/Users/oliveroquist/Documents/pokedex/Font/PocketMonk.otf) format("opentype");
@@ -26,14 +30,14 @@ html {
     width: 100%;
 
     #shiny-button {
-        font-size: large;
+        font-size: 1.115rem;
         border-color: #ffde00;
         background-color: #3B4CCA;
         color: #ffde00;
         position: absolute;
         top: 10px;
         right: 10px;
-        padding: 10px 30px 10px 30px;
+        padding: 0.5em 1em;
 
         @media screen and (max-width : 700px) {
             display: flex;
@@ -45,11 +49,12 @@ html {
     }
 
     #scroll-top-button {
-        font-size: large;
+        font-size: 1.115rem;
         border-color: #ffde00;
         background-color: #3B4CCA;
         color: #ffde00;
-        padding: 10px 30px 10px 30px;
+        padding: 0.5em 1em;
+        cursor: pointer;
     }
 }
 
@@ -57,10 +62,7 @@ html {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    padding: 10px;
-    margin: auto;
+    padding: 0;
 
     @media screen and (max-width : 1000px) {
         display: grid;
@@ -78,20 +80,21 @@ html {
 .pokemon-card {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     text-align: center;
     border-style: solid;
     border-color: rgb(0, 0, 0);
     background-color: rgb(62, 58, 58);
     list-style-type: none;
-    padding: 10px;
-    margin: 10px;
+    margin: 0.5em;
     -webkit-transition: transform 0.3s ease-in-out;
     position: relative;
 
     &:hover {
         transform: scale(1.1);
     }
+
     .card-tooltip {
         font-family: fantasy;
         visibility: hidden;
@@ -109,16 +112,26 @@ html {
     &:hover .card-tooltip {
         visibility: visible;
     }
+
+    .card-image {
+        min-height: 50%;
+        max-width: 100%;
+        padding-top: 0.5rem;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .card-title {
+        font-size: 1.45rem;
+    }
+
+    .card-subtitle {
+        padding-bottom: 0.5rem;
+    }
 }
 
-.card-image {
-    height: 125px;
-    width: auto;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    cursor: pointer;
-}
 
 #pokemon-logo {
     height: auto;
@@ -128,11 +141,12 @@ html {
 }
 
 #regions-container {
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 25px;
+    justify-content: space-between;
+    text-align: center;
+    // padding: 25px;
 
         @media screen and (max-width : 700px) {
             padding: 10px 0px 10px 0px;

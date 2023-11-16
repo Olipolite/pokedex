@@ -1,3 +1,7 @@
+html {
+  font-size: 16px;
+}
+
 @font-face {
   font-family: PocketMonk;
   src: url(/Users/oliveroquist/Documents/pokedex/Font/PocketMonk.otf) format("opentype");
@@ -25,14 +29,14 @@ html {
   width: 100%;
 }
 .container #shiny-button {
-  font-size: large;
+  font-size: 1.115rem;
   border-color: #ffde00;
   background-color: #3B4CCA;
   color: #ffde00;
   position: absolute;
   top: 10px;
   right: 10px;
-  padding: 10px 30px 10px 30px;
+  padding: 0.5em 1em;
 }
 @media screen and (max-width: 700px) {
   .container #shiny-button {
@@ -44,21 +48,19 @@ html {
   }
 }
 .container #scroll-top-button {
-  font-size: large;
+  font-size: 1.115rem;
   border-color: #ffde00;
   background-color: #3B4CCA;
   color: #ffde00;
-  padding: 10px 30px 10px 30px;
+  padding: 0.5em 1em;
+  cursor: pointer;
 }
 
 #pokedex {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  padding: 10px;
-  margin: auto;
+  padding: 0;
 }
 @media screen and (max-width: 1000px) {
   #pokedex {
@@ -78,14 +80,14 @@ html {
 .pokemon-card {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   text-align: center;
   border-style: solid;
   border-color: rgb(0, 0, 0);
   background-color: rgb(62, 58, 58);
   list-style-type: none;
-  padding: 10px;
-  margin: 10px;
+  margin: 0.5em;
   -webkit-transition: transform 0.3s ease-in-out;
   position: relative;
 }
@@ -108,14 +110,20 @@ html {
 .pokemon-card:hover .card-tooltip {
   visibility: visible;
 }
-
-.card-image {
-  height: 125px;
-  width: auto;
+.pokemon-card .card-image {
+  min-height: 50%;
+  max-width: 100%;
+  padding-top: 0.5rem;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+}
+.pokemon-card .card-title {
+  font-size: 1.45rem;
+}
+.pokemon-card .card-subtitle {
+  padding-bottom: 0.5rem;
 }
 
 #pokemon-logo {
@@ -126,11 +134,11 @@ html {
 }
 
 #regions-container {
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding: 25px;
+  justify-content: space-between;
+  text-align: center;
 }
 @media screen and (max-width: 700px) {
   #regions-container {

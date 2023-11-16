@@ -29,7 +29,7 @@ const renderPokemon = (pokemon) => {
         .map((pokeman) => `
             <li class="pokemon-card">
                 <img class="card-image" src="${pokeman.image}"></img>
-                <h2 class="card-title">${pokeman.name}</h2>
+                <p class="card-title">${pokeman.name}</p>
                 <p class="card-subtitle">Type: ${pokeman.type}</p>
                 <p class="card-tooltip">Height: ${pokeman.height / 10}m Weight: ${pokeman.weight / 10}kg Pokédex #${pokeman.id}</p>
             </li>
