@@ -28,10 +28,10 @@ const fetchShinyJohtoPokemon = () => {
 };
 
 
-$("#regions-container").after("<button id='shiny-button'>Shiny</button>");
+$(".regions-container").after("<button class='shiny-button'>Shiny</button>");
 
 const shinyToggle = (pokemonShiny, pokemonJohtoShiny) => {
-    $("#shiny-button").on("click", function() {
+    $(".shiny-button").on("click", function() {
         if (kantoRegion) {
             if(pokemonShiny) {
                 pokemonShiny.map((pokemanShiny, index) => {

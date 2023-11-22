@@ -1,5 +1,5 @@
 const searchPokemon = () => {
-    let $input = $("#search-pokemon").val().toLowerCase();
+    let $input = $(".search-pokemon").val().toLowerCase();
     let x = $(".card-title");
     let pokemonCard = $(".pokemon-card");
     
@@ -12,6 +12,6 @@ const searchPokemon = () => {
     };
 };
 
-$("#search-pokemon").on("keydown", () => {
+$(".search-pokemon").on("keydown", () => {
     searchPokemon();
 });

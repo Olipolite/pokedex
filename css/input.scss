@@ -29,7 +29,7 @@ html {
     position: relative;
     width: 100%;
 
-    #shiny-button {
+    .shiny-button {
         font-size: 1.115rem;
         border-color: #ffde00;
         background-color: #3B4CCA;
@@ -133,14 +133,14 @@ html {
 }
 
 
-#pokemon-logo {
+.pokemon-logo {
     height: auto;
     width: 300px;
     margin-top: 10px;
     cursor: pointer;
 }
 
-#regions-container {
+.regions-container {
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -160,7 +160,7 @@ html {
     }
 }
 
-#search-pokemon {
+.search-pokemon {
     color: #464646;
     padding-top: 5px;
     padding-bottom: 5px;

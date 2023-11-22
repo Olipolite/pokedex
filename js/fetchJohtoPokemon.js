@@ -20,7 +20,7 @@ const fetchJohtoPokemon = () => {
     });
 };
 
-$("#regions-container h2:last").attr("id", "johto-region");
+$(".regions-container h2:last").attr("id", "johto-region");
 
 const renderJohtoPokemon = (pokemonJohto) => {
     $("#johto-region").on("click", () => {

@@ -4,7 +4,7 @@ const fetchPokemon = () => {
     const promises = [];
     for (let i = 1; i <= 151; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        promises.push(fetch(url).then((res) => res.json()));
+        promises.push(fetch(url).then((resolve) => resolve.json()));
     }
     Promise.all(promises).then((results) => {
         const pokemon = results.map((result) => ({

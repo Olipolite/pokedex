@@ -28,7 +28,7 @@ html {
   position: relative;
   width: 100%;
 }
-.container #shiny-button {
+.container .shiny-button {
   font-size: 1.115rem;
   border-color: #ffde00;
   background-color: #3B4CCA;
@@ -39,7 +39,7 @@ html {
   padding: 0.5em 1em;
 }
 @media screen and (max-width: 700px) {
-  .container #shiny-button {
+  .container .shiny-button {
     display: flex;
     position: unset;
     margin-bottom: 10px;
@@ -126,14 +126,14 @@ html {
   padding-bottom: 0.5rem;
 }
 
-#pokemon-logo {
+.pokemon-logo {
   height: auto;
   width: 300px;
   margin-top: 10px;
   cursor: pointer;
 }
 
-#regions-container {
+.regions-container {
   width: 50%;
   display: flex;
   flex-direction: row;
@@ -141,16 +141,16 @@ html {
   text-align: center;
 }
 @media screen and (max-width: 700px) {
-  #regions-container {
+  .regions-container {
     padding: 10px 0px 10px 0px;
   }
 }
-#regions-container h2:hover {
+.regions-container h2:hover {
   color: #3B4CCA;
   cursor: pointer;
 }
 
-#search-pokemon {
+.search-pokemon {
   color: #464646;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -158,11 +158,11 @@ html {
   padding-right: 10px;
   font-family: fantasy;
 }
-#search-pokemon:input {
+.search-pokemon:input {
   color: #464646;
   background-color: #ffde00;
 }
-#search-pokemon:focus {
+.search-pokemon:focus {
   outline: none;
 }
 
