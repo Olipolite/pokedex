@@ -44,7 +44,7 @@ const renderPokemon = (pokemon) => {
 
 
 
-$("#regions-container h2:first").attr("id", "kanto-region");
+$(".regions-container h2:first").attr("id", "kanto-region");
 
 const renderKantoPokemon = (pokemon) => {
     $("#kanto-region").on("click", () => {
@@ -75,7 +75,7 @@ const pokemonBack = (pokemon) => {
     });
 };
 
-$("#pokemon-logo").on("click", function() {
+$(".pokemon-logo").on("click", function() {
     window.location.reload(true);
 })
 

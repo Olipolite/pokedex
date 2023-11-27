@@ -2,7 +2,7 @@ const fetchShinyPokemon = () => {
     const promises = [];
     for (let i = 1; i <= 151; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        promises.push(fetch(url).then((res) => res.json()));
+        promises.push(fetch(url).then((resolve) => resolve.json()));
     }
     Promise.all(promises).then((results) => {
         const pokemonShiny = results.map((result) => ({
@@ -16,7 +16,7 @@ const fetchShinyJohtoPokemon = () => {
     const promises = [];
     for (let i = 152; i <= 251; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        promises.push(fetch(url).then((res) => res.json()));
+        promises.push(fetch(url).then((resolve) => resolve.json()));
     }
     Promise.all(promises).then((results) => {
         const pokemonJohtoShiny = results.map((result) => ({
